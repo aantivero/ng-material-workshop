@@ -1,6 +1,10 @@
-<div fxLayout="column" fxFlex>
+<div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme">
   <md-toolbar color="primary">
     <span>{{title}}</span>
+    <span fxFlex></span>
+    <button md-icon-button [mdMenuTriggerFor]="themeMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
   </md-toolbar>
   <md-sidenav-container fxFlex>
     <md-sidenav mode="side" opened>
@@ -33,4 +37,7 @@
       </md-card>
     </div>
   </md-sidenav-container>
+  <md-menu #themeMenu x-position="before">
+    <button md-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
+  </md-menu>
 </div>

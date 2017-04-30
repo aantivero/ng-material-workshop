@@ -70,6 +70,7 @@ export class AppComponent {
       isCool: true
     }
   ];
+  selectedUser = this.users[0];
 
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     // para evitar ataques xss la URL debe ser segura, considerar utilizar alguna dentro de la aplicación

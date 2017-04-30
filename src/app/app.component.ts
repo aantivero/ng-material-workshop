@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MdIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -68,4 +70,10 @@ export class AppComponent {
       isCool: true
     }
   ];
+
+  constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+    // para evitar ataques xss la URL debe ser segura, considerar utilizar alguna dentro de la aplicación
+    const avatarsSafeUrl = sanitizer.bypassSecurityTrustResourceUrl('./assets/avatars.svg');
+    iconRegistry.addSvgIconSetInNamespace('avatars', avatarsSafeUrl);
+  }
 }

@@ -11,6 +11,12 @@ md-sidenav {
   padding: 12px;
 }
 
+.fab-bottom-right {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
 .avatar {
   overflow: hidden;
   width: 64px;
